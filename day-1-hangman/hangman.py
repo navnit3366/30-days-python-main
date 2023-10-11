@@ -1,6 +1,6 @@
-import random
 import time
 from messages import start_message, end_message, hangmanpics
+import secrets
 
 filepath = 'words.txt'
 words = []
@@ -19,7 +19,7 @@ def wipe():
     
 def pick_word(words):
     """Pick a word randomly then remove it from the list"""
-    word = random.choice(words)
+    word = secrets.SystemRandom().choice(words)
     words.remove(word)
     return word.upper()
 
